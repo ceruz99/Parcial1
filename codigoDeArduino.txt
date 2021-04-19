@@ -1,0 +1,55 @@
+Link: https://www.tinkercad.com/things/897kFqynMmx-copy-of-info2p1intento3/editel?sharecode=tllomvkIOlDVBhSfpRf2nNsCDipyzA4ikfcfDns5Qzg
+
+
+const int SER=2;
+const int RCLK=3;
+const int SCRLK=4;
+const int SRCLR=12;
+int datou=B11111111;
+int datod=B10001000;
+
+/*La función verificación permite al usuario verificar que 
+los 64 leds estan funcionales*/
+void verificacion();
+
+void setup()
+{
+  pinMode(SER,OUTPUT);
+  pinMode(RCLK,OUTPUT);
+  pinMode(SCRLK,OUTPUT);
+  pinMode(SRCLR,OUTPUT);
+  
+  digitalWrite(SER,0);
+  digitalWrite(RCLK,0);
+  digitalWrite(SCRLK,0);
+  digitalWrite(SRCLR,0);
+  digitalWrite(SRCLR,1);
+  
+  verificacion();
+}
+
+void loop()
+{	
+
+
+}
+
+void verificacion(){
+     for(int i=0;i<8;i++){
+      shiftOut(SER, SCRLK, MSBFIRST, B11111111);
+
+      digitalWrite(RCLK,0);
+      digitalWrite(RCLK,1);
+      digitalWrite(RCLK,0);
+      delay(500);
+     }
+
+     for(int i=0;i<8;i++){
+      shiftOut(SER, SCRLK, MSBFIRST, B00000000);
+
+      digitalWrite(RCLK,0);
+      digitalWrite(RCLK,1);
+      digitalWrite(RCLK,0);
+      delay(500);
+     }
+}
