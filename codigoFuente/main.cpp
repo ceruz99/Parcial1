@@ -10,10 +10,8 @@ int decimalColumna(int );/*Toma los numeros del 1 al 8 ingresados por el usuario
                          los vuelve un solo decimal*/
 int aBinario(int );//Toma un numero decimal y lo convierte a binario.
 
-
 int main()
 {
-    imagen();
 
     return 0;
 }
