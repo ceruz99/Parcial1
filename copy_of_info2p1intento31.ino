@@ -1,12 +1,13 @@
-const int SER=2;
-const int RCLK=3;
-const int SCRLK=4;
-const int SRCLR=12;
-int datou=B11111111;
-int datod=B10001000;
 
 /*////////////////////////////////////////////////////////
 MANUAL PARA USUARIO.
+
+
+Descripcion:
+El programa le permitira mostrar patrones, imagenes o letras
+de manera consecutiva para mostrar frases en la pantalla de 
+64 leds que se encuentra organizada como en la Figura1. A
+continuación las instrucciones de uso.
 
 Figura1.
 
@@ -20,7 +21,7 @@ Columnas:
 [6][6][6][6][6][6][6][6]
 [7][7][7][7][7][7][7][7]
 [8][8][8][8][8][8][8][8]
-
+ 
 
 Al ser inicializado el programa, este le enseñara un menu en
 el cual puede seleccionar entre las funciones verificacion,
@@ -36,25 +37,22 @@ sistema estan en correcto funcionamiento.
 Funcion imagen: Le permitira mostrar de manera fija un patron
 que desee.
 	Modo de uso imagen:
-    Modo de uso publik:
-    1. El programa le preguntara cuantos patrones desea 
-    imprimir, debe ingresar el numero en el monitor.
-    2. El programa le mostrara la matriz de 64 posiciones.
-    3. Empezando por la columna 1(Figura1) señalada con los
+    1. El programa le mostrara la matriz de 64 posiciones.
+    2. Empezando por la columna 1(Figura1) señalada con los
     simbolos "^^^", se le pedira que ingrese en el monitor 
     numeros entre el 0 y el 8.
-    4.Los numeros del 1 al 8 representan las posiciones 
+    3.Los numeros del 1 al 8 representan las posiciones 
     respectivamente en la matriz de leds de 8x8 y el numero
     0 representa que no se quiere utilizar ningun led de la
     columna.
-    5. Los numeros deben ser ingresados del menor al mayor,
+    4. Los numeros deben ser ingresados del menor al mayor,
     ejemplo: 1234, 2567, 458, etc.
-    6. Luego de ingresar los numeros para la primera columna
+    5. Luego de ingresar los numeros para la primera columna
     que se le solicita, se le pediran los numeros para la 
     siguiente columna que es la columna 2(Figura1), luego 
     para la columna 3, y así sucesivamente hasta llegar a la
     columna8.
-    7.Finalizada esta etapa el patron se imprimira en la matriz
+    6.Finalizada esta etapa el patron se imprimira en la matriz
     de leds.
 
 Funcion publik: Le permite mostrar varios patrones de forma 
@@ -78,8 +76,8 @@ consecutiva.
     para la columna 3, y así sucesivamente hasta llegar a la
     columna8.
     7.Una vez completadas las 8 columnas, el programa volvera
-    a pedirle nuevamente otras 8 columnas para ingresar el
-    siguiente patron.
+    a pedirle nuevamente otras 8 columnas para el siguiente 
+    patron.
     8.Dicho lo anterior el proceso se repetira un numero de 
     veces segun el numero de patrones deseados.
     9.Finalizado lo anterior la matriz imprimira de forma
@@ -88,6 +86,15 @@ consecutiva.
     monitor el numero 0.
 
 *////////////////////////////////////////////////////////
+
+const int SER=2;
+const int RCLK=3;
+const int SCRLK=4;
+const int SRCLR=12;
+int datou=B11111111;
+int datod=B10001000;
+
+
 
 /*La función verificación permite al usuario verificar que 
 los 64 leds estan funcionales.*/
